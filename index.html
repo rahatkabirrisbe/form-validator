@@ -1,51 +1,134 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Form Validation</title>
-  </head>
-  <body>
-    <section>
-      <form action="">
-        <div class="header">
-          <h1>Create Account</h1>
-        </div>
-        <div>
-          <label for="name">Name : </label>
-          <input type="text" name="" id="name" />
-        </div>
-        <div>
-          <label for="user-name">Username : </label>
-          <input type="text" name="" id="user-name" />
-        </div>
-        <div>
-          <label for="email">Email : </label>
-          <input type="email" name="" id="email" />
-        </div>
-        <div>
-          <label for="number">Number : </label>
-          <input type="number" name="" id="number" />
-        </div>
-        <div>
-          <label for="slug">Slug : </label>
-          <input type="text" name="" id="slug" />
-        </div>
-        <div>
-          <label for="password">Password : </label>
-          <input type="password" name="" id="password" />
-          <button type="button">Generate password</button>
-        </div>
-        <div>
-          <label for="web-url">Website Url : </label>
-          <input type="url" name="" id="web-url" />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Form Validation</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
+    <header class="container">
+        <div id="success" class="alert alert-success alert-dismissible" role="alert">
+          <strong>That's Great</strong> You just submitted everything perfectly! 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        
+        <div id="failure" class="alert alert-danger alert-dismissible" role="alert">
+          <strong>Shit!</strong> There's is something wrong in the form! 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </header>
+
+    <main class="container my-5">
+
+        <h2 class="my-5 text-center">Regex Validation Form</h1>
+        
+        <hr class="py-2">
+
+        <form class="row g-3 needs-validation" novalidate>
+            
+            <div class="col-md-6">
+              <label for="fname" class="form-label">First name</label>
+              <input type="text" class="form-control" id="fname" value="" placeholder="Your First Name" required>
+                <div class="invalid-feedback">
+                    Please Enter your valid first name
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+              <label for="lname" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="lname" value="" placeholder="Your Last Name" required>
+                <div class="invalid-feedback">
+                  Please Enter your valid last name
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="email" class="form-label">Your Email Address</label>
+              <input type="email" class="form-control" id="email" value="" placeholder="Your email Address" required>
+                <div class="invalid-feedback">
+                  Please Enter your valid email address
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Your Phone Number</label>
+              <input type="tel" class="form-control" id="phone" value="" placeholder="Your phone number" required>
+                <div class="invalid-feedback">
+                  Please Enter your valid phone number
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-12">
+              <label for="phone" class="form-label">Website Name</label>
+              <input type="url" class="form-control" id="url" value="" placeholder="Website name" required>
+                <div class="invalid-feedback">
+                  Please Enter your valid web address and add only www before address.
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+              <label for="validationCustom03" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" required>
+                <div class="invalid-feedback">
+                  Please Enter your valid City Name
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+              <label for="zip" class="form-label">Zip</label>
+              <input type="number" class="form-control" id="zip" required>
+                <div class="invalid-feedback">
+                  Please Enter your valid Zip Code
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            
+            <!-- <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check" required>
+                <label class="form-check-label" for="invalidCheck">
+                  Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div> -->
+            
+            <div class="col-3">
+              <button class="btn btn-primary" type="submit" id="submit">Submit form</button>
+            </div>
+        </form>
+    </main>
+    
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>
-  </body>
+</body>
 </html>
